@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>World Quizzer Daily Quiz</title>
+  <meta name="description" content="Five geography questions a day, the same for everyone. Can you beat your friends?">
+  <meta property="og:title" content="World Quizzer Daily Quiz 🌍">
+  <meta property="og:description" content="Five geography questions a day, the same for everyone. Can you beat my score?">
+  <meta property="og:type" content="website">
+  <meta name="apple-itunes-app" content="app-id=6823729546">
+  <style>
+    :root { --blue: #2f6fd6; --green: #2e9d4f; --ink: #1c2742; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center;
+      font-family: ui-rounded, -apple-system, "SF Pro Rounded", system-ui, sans-serif;
+      background: linear-gradient(#5bb3f0, #1f70c4); color: var(--ink); padding: 24px;
+    }
+    .card {
+      background: #fff; border-radius: 24px; padding: 28px 24px; max-width: 380px; width: 100%;
+      text-align: center; box-shadow: 0 8px 0 #c9d3e3, 0 14px 30px rgba(0,0,0,.18);
+    }
+    .globe { font-size: 56px; }
+    h1 { font-size: 26px; margin: 8px 0 4px; }
+    .number { color: #5b6680; font-weight: 700; margin: 0 0 16px; }
+    p { line-height: 1.45; }
+    .button {
+      display: block; margin: 18px auto 6px; padding: 14px 18px; border-radius: 16px; font-weight: 800;
+      font-size: 18px; color: #fff; text-decoration: none; background: var(--green); box-shadow: 0 5px 0 #1f7039;
+    }
+    .note { font-size: 14px; color: #5b6680; }
+    .hidden { display: none; }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <div class="globe">🌍</div>
+    <h1>World Quizzer Daily Quiz</h1>
+    <p class="number" id="number"></p>
+    <p>Five quick geography questions a day: a flag, a map, a capital and more. Everyone gets the same five, so you can compare scores with friends.</p>
+
+    <div id="iphone">
+      <a class="button" href="https://apps.apple.com/app/id6823729546">Play on iPhone</a>
+      <p class="note">Already have World Quizzer? Tapping a shared link opens today's quiz in the app.</p>
+    </div>
+
+    <div id="android" class="hidden">
+      <p><strong>World Quizzer is only on iPhone for now.</strong></p>
+      <p class="note">If you have an iPhone or iPad too, you can get it from the App Store.</p>
+    </div>
+  </main>
+
+  <script>
+    // "?n=12" is the quiz number from the shared message (the same for everyone on a day).
+    var n = new URLSearchParams(location.search).get("n");
+    if (n && /^\d+$/.test(n)) document.getElementById("number").textContent = "Daily #" + n;
+    if (/android/i.test(navigator.userAgent)) {
+      document.getElementById("iphone").classList.add("hidden");
+      document.getElementById("android").classList.remove("hidden");
+    }
+  </script>
+</body>
+</html>

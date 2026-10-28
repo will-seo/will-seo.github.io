@@ -1,0 +1,10 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["K9P44ALFC9.com.williambarnespersonalteam.MapQuizTest"],
+        "components": [{ "/": "/daily*", "comment": "Daily quiz share links open World Quizzer's daily quiz" }]
+      }
+    ]
+  }
+}
