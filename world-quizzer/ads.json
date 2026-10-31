@@ -1,5 +1,6 @@
 {
   "adsEnabled": true,
   "roundsBetweenAds": 3,
-  "minimumGapSeconds": 180
+  "minimumGapSeconds": 180,
+  "everyDailyQuiz": true
 }
