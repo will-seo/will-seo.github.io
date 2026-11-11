@@ -1,6 +1,19 @@
 {
   "adsEnabled": true,
-  "roundsBetweenAds": 3,
+  "adsMuted": true,
   "minimumGapSeconds": 180,
+
+  "showBannersInDailyQuiz": true,
+  "showAdAfterDailyQuizAnswers": false,
+  "showAdBeforeDailyQuizFlight": false,
+
+  "showBannersInQuizzes": true,
+  "showAdAfterMultipleChoiceQuizzes": true,
+  "multipleChoiceQuizzesPerAd": 3,
+
+  "showAdAfterMapQuizzes": true,
+  "mapQuizzesPerAd": 3,
+
+  "roundsBetweenAds": 3,
   "everyDailyQuiz": true
 }
