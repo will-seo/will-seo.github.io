@@ -1,7 +1,7 @@
 {
   "adsEnabled": true,
   "adsMuted": true,
-  "minimumGapSeconds": 0,
+  "minimumGapSeconds": 180,
 
   "showBannersInDailyQuiz": true,
   "showAdAfterDailyQuizAnswers": false,
