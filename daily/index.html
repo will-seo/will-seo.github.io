@@ -29,6 +29,7 @@
       display: block; margin: 18px auto 6px; padding: 14px 18px; border-radius: 16px; font-weight: 800;
       font-size: 18px; color: #fff; text-decoration: none; background: var(--green); box-shadow: 0 5px 0 #1f7039;
     }
+    .button.android { background: var(--blue); box-shadow: 0 5px 0 #1d4f9e; }
     .note { font-size: 14px; color: #5b6680; }
     .hidden { display: none; }
   </style>
@@ -40,25 +41,19 @@
     <p class="number" id="number"></p>
     <p>Five quick geography questions a day: a flag, a map, a capital and more. Everyone gets the same five, so you can compare scores with friends.</p>
 
-    <div id="iphone">
-      <a class="button" href="https://apps.apple.com/app/id6823729546">Play on iPhone</a>
-      <p class="note">Already have World Quizzer? Tapping a shared link opens today's quiz in the app.</p>
-    </div>
-
-    <div id="android" class="hidden">
-      <p><strong>World Quizzer is only on iPhone for now.</strong></p>
-      <p class="note">If you have an iPhone or iPad too, you can get it from the App Store.</p>
-    </div>
+    <a class="button" id="iphone" href="https://apps.apple.com/app/id6823729546">Play on iPhone</a>
+    <a class="button android" id="android" href="https://play.google.com/store/apps/details?id=com.willseo.worldquizzer">Play on Android</a>
+    <p class="note">Already have World Quizzer? Tapping a shared link opens today's quiz in the app.</p>
   </main>
 
   <script>
     // "?n=12" is the quiz number from the shared message (the same for everyone on a day).
     var n = new URLSearchParams(location.search).get("n");
     if (n && /^\d+$/.test(n)) document.getElementById("number").textContent = "Daily #" + n;
-    if (/android/i.test(navigator.userAgent)) {
-      document.getElementById("iphone").classList.add("hidden");
-      document.getElementById("android").classList.remove("hidden");
-    }
+    // Each phone sees its own store's button; anything else (Windows, Linux, unknown) sees both.
+    var ua = navigator.userAgent;
+    if (/android/i.test(ua)) document.getElementById("iphone").classList.add("hidden");
+    else if (/iPhone|iPad|iPod|Macintosh/i.test(ua)) document.getElementById("android").classList.add("hidden");
   </script>
 </body>
 </html>
