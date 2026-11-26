@@ -8,7 +8,7 @@ The web page behind World Quizzer's daily-quiz share links (`https://will-seo.gi
   straight to their own store is `/get`'s job only.
 - `daily/share.png` is the picture shown when the link is shared (a copy of the Google Play feature graphic).
   `sitemap.xml` lists the page for search engines and is named in `robots.txt`.
-- `get/share.jpg` is the picture shown when the `/get` link is shared (the share picture as a smaller JPEG).
+- `get/share.jpg` is the picture shown when the `/get` link is shared: the app icon, 600 px square (Will, 2026-11-26).
 - `.nojekyll` makes GitHub Pages serve the `.well-known` folder.
 
 The privacy policy is a separate site: https://will-seo.github.io/world-quizzer-privacy/
